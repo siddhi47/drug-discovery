@@ -8,8 +8,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  environment: p
   build:
+
+    environment: p
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
