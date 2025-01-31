@@ -60,11 +60,11 @@ predictions = pipe.predict(X_test)
 cm = confusion_matrix(y_test, predictions, labels=pipe.classes_)
 disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=pipe.classes_)
 disp.plot()
-plt.savefig("./results/model_results.png", dpi=120)
+plt.savefig("results/model_results.png", dpi=120)
 
 ## Write metrics to file
-with open("./results/metrics.txt", "w") as outfile:
+with open("results/metrics.txt", "w") as outfile:
     outfile.write(f"\nAccuracy = {round(accuracy, 2)}, F1 Score = {round(f1, 2)}")
 
 ## Saving the model file
-sio.dump(pipe, "./model/drug_pipeline.skops")
+sio.dump(pipe, "model/drug_pipeline.skops")
