@@ -1,5 +1,4 @@
-import gradio as gr
-import skops.io as sio
+import gradio as gr import skops.io as sio
 
 pipe = sio.load("./model/drug_pipeline.skops",)
 
@@ -54,4 +53,4 @@ gr.Interface(
     description=description,
     article=article,
     theme=gr.themes.Soft(),
-).launch(share=True)
+).launch()
