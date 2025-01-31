@@ -8,6 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
+  environment: p
   build:
     runs-on: ubuntu-latest
     steps:
