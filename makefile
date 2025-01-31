@@ -31,10 +31,9 @@ hf-login:
 	huggingface-cli login --token $(HF) --add-to-git-credential
 
 push-hub: 
-	ls -la
 	huggingface-cli upload siddhi47/drug-classification ./app --repo-type=space --commit-message="Sync App files"
-	huggingface-cli upload siddhi47/drug-classification ./model /model --repo-type=space --commit-message="Sync Model"
-	huggingface-cli upload siddhi47/drug-classification ./results /metrics --repo-type=space --commit-message="Sync Model"
+	huggingface-cli upload siddhi47/drug-classification ./model  --repo-type=space --commit-message="Sync Model"
+	huggingface-cli upload siddhi47/drug-classification ./results  --repo-type=space --commit-message="Sync Model"
 
 deploy: hf-login push-hub
 
