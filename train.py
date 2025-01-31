@@ -69,7 +69,7 @@ plt.savefig("results/model_results.png", dpi=120)
 with open("results/metrics.txt", "w") as outfile:
     outfile.write(f"\nAccuracy = {round(accuracy, 2)}, F1 Score = {round(f1, 2)}")
 
-if os.path.exists("model"):
+if not os.path.exists("model"):
     os.makedirs("model")
 ## Saving the model file
 sio.dump(pipe, "model/drug_pipeline.skops")
